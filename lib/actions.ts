@@ -100,11 +100,10 @@ export const createNewProject = async (
 };
 
 export const fetchAllProjects = async (
-  category?: string,
+  category: string = "Frontend",
   endCursor?: string
 ) => {
   client.setHeader("x-api-key", apiKey);
-  console.log(category, endCursor);
 
   return makeGraphQLRequest(projectsQuery, { category, endCursor });
 };
